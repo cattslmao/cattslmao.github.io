@@ -1,0 +1,73 @@
+:root {
+  --color-background: #000;
+  --color-text-main: #fff;
+  --color-text-link: #fff;
+  --color-border: rgba(255, 255, 255, .05);
+  --font-main: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  font-family: var(--font-main);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+  padding-block: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.25em;
+  min-height: 100vh;
+}
+
+.wordmark {
+  font-weight: bold;
+  font-size: clamp(2rem, 4vw, 4rem);
+  display: flex;
+  justify-content: center;
+  gap: 0.25em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+.links a {
+  transition: 0.2s;
+  transition-timing-function: ease;
+}
+.links a:hover {
+  transform: scale(115%);
+  filter: drop-shadow(0 0 0.5em rgba(255, 255, 255, 0.25));
+}
+.links a div.social-icon {
+  aspect-ratio: 1/1;
+  height: 2.75em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}/*# sourceMappingURL=style.css.map */
