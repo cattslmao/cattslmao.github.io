@@ -19,6 +19,8 @@ body {
     font-family: var(--font-main);
 
     min-height: 100vh;
+
+    overflow: hidden;
 }
 
 a {
@@ -84,6 +86,33 @@ a {
         }
     }
 
+}
+
+#paw {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    user-select: none;
+    pointer-events: none;
+
+    animation-duration: .35s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+
+    animation-timing-function: ease-out;
+
+    z-index: 99;
+}
+
+@keyframes paw {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate(15%, 15%);
+    }
 }
 
 .notice {

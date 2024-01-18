@@ -53,4 +53,53 @@ class Kity {
 
         el.addEventListener("animationend", (event) => { event.target.remove(); });
     }
+
+    paw_offset = {
+        x: -10,
+        y: -110,
+    };
+
+    paw = null;
+    paw_active = false;
+
+    createPaw() {
+        let paw = document.createElement("img");
+        paw.id = "paw";
+        paw.src = "assets/paw.png";
+        paw.alt = "A cat paw."
+        paw.style.display = "none";
+
+        return paw;
+    }
+
+    initalizePaw() {
+        this.paw = this.createPaw();
+        document.body.append(this.paw);
+
+        addEventListener("mousedown", (event) => {
+            this.paw.style.left = (event.pageX + this.paw_offset.x) + "px";
+            this.paw.style.top = (event.pageY + this.paw_offset.y) + "px";
+
+            paw.style.display = "block";
+            this.paw.style.animationName = "none";
+
+            this.paw_active = true;
+        });
+
+        addEventListener("mousemove", (event) => {
+            if (!this.paw_active) {
+                return;
+            }
+
+            this.paw.style.left = (event.pageX + this.paw_offset.x) + "px";
+            this.paw.style.top = (event.pageY + this.paw_offset.y) + "px";
+        });
+
+
+        addEventListener("mouseup", (event) => {
+            this.paw.style.animationName = "paw";
+
+            this.paw_active = false;
+        });
+    }
 }

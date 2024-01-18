@@ -51,6 +51,12 @@
             
             return false;
         };
+        
+        // paw
+        if (Math.random() > 0.99 || window.location.hash === "#cat") {
+            app.initalizePaw();
+            app.showNotice("You feel a warm, fuzzy, furry feeling...");
+        }
     </script>
 </body>
 </html>

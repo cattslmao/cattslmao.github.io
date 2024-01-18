@@ -16,6 +16,7 @@ body {
   color: var(--color-text-main);
   font-family: var(--font-main);
   min-height: 100vh;
+  overflow: hidden;
 }
 
 a {
@@ -72,6 +73,30 @@ a:hover {
   background-position: center;
 }
 
+#paw {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  animation-duration: 0.35s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  z-index: 99;
+}
+
+@keyframes paw {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate(15%, 15%);
+  }
+}
 .notice {
   position: absolute;
   width: 100vw;
