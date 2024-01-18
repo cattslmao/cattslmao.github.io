@@ -3,8 +3,6 @@
     --color-text-main: #fff;
     --color-text-link: #fff;
 
-    --color-border: rgba(255, 255, 255, .05);
-
     --font-main: 'Poppins', sans-serif;
 }
 
@@ -38,8 +36,6 @@ a {
 
     padding-block: 2em;
 
-    // background-color: rgba($color: #fff, $alpha: .1);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,6 +44,8 @@ a {
     gap: 2.25em;
 
     min-height: 100vh;
+
+    position: relative;
 }
 
 .wordmark {
@@ -86,4 +84,39 @@ a {
         }
     }
 
+}
+
+.notice {
+    position: absolute;
+    width: 100vw;
+
+    top: 65%;
+
+    text-align: center;
+
+    animation-name: fade-in;
+    animation-duration: 2.5s;
+
+    animation-fill-mode: forwards;
+
+    user-select: none;
+}
+
+@keyframes fade-in {
+    0% {
+        color: transparent;
+        transform: translateY(.25em);
+    }
+    25% {
+        color: white;
+        transform: translateY(0em);
+    }
+    75% {
+        color: white;
+        //transform: translateY(0em);
+    }
+    100% {
+        color: transparent;
+        //transform: translateY(-.25em);
+    }
 }

@@ -6,6 +6,8 @@ class Kity {
     name = "kity";
     wordmark = document.querySelector("span.wordmark");
 
+    container = document.querySelector(".container");
+
     logo_fonts = ["Poppins", "Shantell Sans", "Arial"];
     logo_sub = [".dev", " world", " zone", " universe", " galaxy", " cat", " :3"];
 
@@ -23,6 +25,32 @@ class Kity {
             el.style.transform = "translate(0, " + (-.1 + (Math.random() * .2)) + "em) rotate(" + (-15 + (Math.random() * 30)) + "deg)";
         
             this.wordmark.appendChild(el);
-        }    
+        }
+    }
+
+    copyToClipboard(str) {
+        let el = document.createElement("input");
+
+        el.value = str;
+
+        el.select();
+        el.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(el.value);
+
+        el.remove();
+    }
+
+    showNotice(str) {
+        document.querySelectorAll("span.notice").forEach((el) => { el.remove(); });
+
+        let el = document.createElement("span");
+        el.classList.add("notice");
+
+        el.textContent = str;
+
+        this.container.appendChild(el);
+
+        el.addEventListener("animationend", (event) => { event.target.remove(); });
     }
 }

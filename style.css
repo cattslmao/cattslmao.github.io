@@ -2,7 +2,6 @@
   --color-background: #000;
   --color-text-main: #fff;
   --color-text-link: #fff;
-  --color-border: rgba(255, 255, 255, .05);
   --font-main: "Poppins", sans-serif;
 }
 
@@ -37,6 +36,7 @@ a:hover {
   flex-direction: column;
   gap: 2.25em;
   min-height: 100vh;
+  position: relative;
 }
 
 .wordmark {
@@ -70,4 +70,34 @@ a:hover {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+.notice {
+  position: absolute;
+  width: 100vw;
+  top: 65%;
+  text-align: center;
+  animation-name: fade-in;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+@keyframes fade-in {
+  0% {
+    color: transparent;
+    transform: translateY(0.25em);
+  }
+  25% {
+    color: white;
+    transform: translateY(0em);
+  }
+  75% {
+    color: white;
+  }
+  100% {
+    color: transparent;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -17,11 +17,20 @@
             <a href="https://twitter.com/impossiblebliss">
                 <div class="social-icon" style="background-image: url(assets/svg/twitter.svg);"></div>
             </a>
+            <a href="https://bsky.app/profile/kity.dev">
+                <div class="social-icon" style="background-image: url(assets/svg/bluesky.svg);"></div>
+            </a>
+            <a href="https://steamcommunity.com/profiles/76561197963035118">
+                <div class="social-icon" style="background-image: url(assets/svg/steam.svg);"></div>
+            </a>
             <a href="https://github.com/cattslmao">
                 <div class="social-icon" style="background-image: url(assets/svg/github.svg);"></div>
             </a>
             <a href="https://www.youtube.com/@catslmao">
                 <div class="social-icon" style="background-image: url(assets/svg/youtube.svg);"></div>
+            </a>
+            <a href="#" id="discord-social">
+                <div class="social-icon" style="background-image: url(assets/svg/discord.svg);"></div>
             </a>
         </div>
     </div>
@@ -31,6 +40,15 @@
         app.randomizeLogo();
 
         app.wordmark.onclick = () => { app.randomizeLogo() };
+
+        const discord = document.getElementById("discord-social");
+
+        discord.onclick = () => {
+            app.copyToClipboard("catslmao");
+            app.showNotice("Username copied to clipboard.");
+            
+            return false;
+        };
     </script>
 </body>
 </html>
